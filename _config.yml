@@ -1,0 +1,7 @@
+title: Regexper
+email: jeff.avallone@gmail.com
+description: >
+  Regular expression visualizer using railroad diagrams
+baseurl: ""
+url: "http://regexper.com"
+markdown: kramdown
