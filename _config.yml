@@ -8,4 +8,3 @@ exclude:
 baseurl: ""
 url: "http://regexper.com"
 markdown: kramdown
-ga_account: "UA-37364632-1"
