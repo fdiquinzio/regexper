@@ -3,6 +3,8 @@ description: >
 exclude:
   - Gemfile
   - Gemfile.lock
+  - Rakefile
+  - spec
 baseurl: ""
 url: "http://regexper.com"
 markdown: kramdown
