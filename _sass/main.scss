@@ -3,6 +3,7 @@ $dark-gray: #6b6659;
 $light-gray: #cbcbba;
 $red: #b3151a;
 $black: #000;
+$white: #fff;
 
 html {
   font-size: 100%;
@@ -39,6 +40,92 @@ header {
 
 #content {
   padding: 2em;
+
+  .container {
+    border: 1px solid $black;
+    position: relative;
+
+    span {
+      margin-right: 100px;
+    }
+
+    input {
+      border: 0 none;
+      outline: none;
+      background: $light-gray;
+      padding: 0.25em 0;
+      text-indent: 0.5em;
+      width: 100%;
+      font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+      font-size: 100%;
+
+      &::-webkit-input-placeholder {
+        color: $dark-gray;
+      }
+
+      &:-moz-placeholder {
+        color: $dark-gray;
+      }
+    }
+
+    button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      border: 0 none;
+      border-left: 1px solid $black;
+      background: $green;
+      padding: 0;
+      font-size: 100%;
+    }
+  }
+
+  .results {
+    border: 1px solid $black;
+    margin-top: 20px;
+    display: none;
+
+    body.has-results &, body.has-error &, body.is-loading & {
+      display: block;
+    }
+  }
+}
+
+#loading {
+  background: $white;
+  text-align: center;
+  padding: 10px 0;
+  display: none;
+
+  body.is-loading & {
+    display: block;
+  }
+}
+
+#error {
+  background: $red;
+  color: $white;
+  text-indent: 0.5em;
+  font-weight: bold;
+  display: none;
+
+  body.has-error & {
+    display: block;
+  }
+}
+
+#regexp-render {
+  background: $white;
+  overflow: auto;
+  width: 100%;
+  text-align: center;
+
+  body.is-loading &, body.has-error & {
+    position: absolute;
+    top: -100px;
+  }
 }
 
 footer {
