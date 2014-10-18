@@ -1,5 +1,8 @@
 description: >
   Regular expression visualizer using railroad diagrams
+exclude:
+  - Gemfile
+  - Gemfile.lock
 baseurl: ""
 url: "http://regexper.com"
 markdown: kramdown
