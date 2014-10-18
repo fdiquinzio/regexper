@@ -1,20 +1,16 @@
-$green: #bada55;
-$dark-gray: #6b6659;
-$light-gray: #cbcbba;
-$red: #b3151a;
-$black: #000;
-$white: #fff;
+@import 'base';
+@import 'compass/reset';
+@import 'compass/typography/lists/inline-block-list';
+@import 'compass/typography/vertical_rhythm';
+@import 'compass/css3/box-shadow';
+@import 'compass/css3/user-interface';
 
-html {
-  font-size: 100%;
-}
+@include establish-baseline;
 
 body {
-  font-size: 1em;
   font-family: sans-serif;
-  line-height: 1.4em;
   background: $dark-gray;
-  margin: 0 0 1em 0;
+  margin-bottom: rhythm(1);
 }
 
 a {
@@ -23,14 +19,12 @@ a {
 
 header {
   background: $green;
-  padding: 1.5em 2em;
-  box-shadow: 0 0 15px;
+  padding: rhythm(1);
+  @include box-shadow;
 
   h1 {
+    @include adjust-font-size-to(48px, 2);
     font-family: 'Bangers', 'cursive';
-    font-size: 3em;
-    margin: 0;
-    line-height: 1em;
   }
 
   span {
@@ -39,10 +33,9 @@ header {
 }
 
 #content {
-  padding: 2em;
+  padding: rhythm(1);
 
   .container {
-    border: 1px solid $black;
     position: relative;
 
     span {
@@ -50,41 +43,34 @@ header {
     }
 
     input {
+      @include adjust-font-size-to($base-font-size);
       border: 0 none;
       outline: none;
       background: $light-gray;
-      padding: 0.25em 0;
+      padding: rhythm(1/8) 0;
       text-indent: 0.5em;
       width: 100%;
       font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
-      font-size: 100%;
 
-      &::-webkit-input-placeholder {
-        color: $dark-gray;
-      }
-
-      &:-moz-placeholder {
+      @include input-placeholder {
         color: $dark-gray;
       }
     }
 
     button {
+      @include adjust-font-size-to($base-font-size);
       position: absolute;
       right: 0;
       top: 0;
       width: 100px;
       height: 100%;
       border: 0 none;
-      border-left: 1px solid $black;
       background: $green;
-      padding: 0;
-      font-size: 100%;
     }
   }
 
   .results {
-    border: 1px solid $black;
-    margin-top: 20px;
+    margin-top: rhythm(1);
     display: none;
 
     body.has-results &, body.has-error &, body.is-loading & {
@@ -96,7 +82,7 @@ header {
 #loading {
   background: $white;
   text-align: center;
-  padding: 10px 0;
+  padding: rhythm(1/2) 0;
   display: none;
 
   body.is-loading & {
@@ -129,23 +115,21 @@ header {
 }
 
 footer {
-  padding: 0 2em;
-  font-size: 12px;
+  padding: 0 rhythm(1);
 
   ul {
-    line-height: 1.4em;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+    @include adjust-font-size-to(14px, 2/3);
+    @include inline-block-list;
 
-  li {
-    display: inline-block;
-    border-right: 1px solid $black;
-    padding: 0 5px;
+    li {
+      &::after {
+        content: '//';
+        padding: 0 5px;
+      }
 
-    &:last-child {
-      border-right: 0 none;
+      &:last-child::after {
+        content: '';
+      }
     }
   }
 
