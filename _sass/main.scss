@@ -1,46 +1,67 @@
-@charset "utf-8";
+$green: #bada55;
+$dark-gray: #6b6659;
+$light-gray: #cbcbba;
+$red: #b3151a;
+$black: #000;
 
-
-
-// Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
-// Using media queries with like this:
-// @include media-query($palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+html {
+  font-size: 100%;
 }
 
+body {
+  font-size: 1em;
+  font-family: sans-serif;
+  line-height: 1.4em;
+  background: $dark-gray;
+  margin: 0 0 1em 0;
+}
 
+a {
+  color: $black;
+}
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+header {
+  background: $green;
+  padding: 1.5em 2em;
+  box-shadow: 0 0 15px;
+
+  h1 {
+    font-family: 'Bangers', 'cursive';
+    font-size: 3em;
+    margin: 0;
+    line-height: 1em;
+  }
+
+  span {
+    color: $dark-gray;
+  }
+}
+
+#content {
+  padding: 2em;
+}
+
+footer {
+  padding: 0 2em;
+  font-size: 12px;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    border-right: 1px solid $black;
+    padding: 0 5px;
+
+    &:last-child {
+      border-right: 0 none;
+    }
+  }
+
+  img {
+    vertical-align: middle;
+  }
+}
