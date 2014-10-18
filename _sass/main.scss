@@ -6,6 +6,9 @@
 @import 'compass/css3/user-interface';
 @import 'compass/css3/animation';
 @import 'compass/css3/transform';
+@import 'compass/css3/images';
+@import 'compass/typography/links/unstyled-link';
+@import 'compass/utilities/general/clearfix';
 
 @include establish-baseline;
 
@@ -20,17 +23,31 @@ a {
 }
 
 header {
-  background: $green;
+  @include background(linear-gradient(to bottom, $green, $dark-green));
+  background-color: $green;
   padding: rhythm(1);
   @include box-shadow;
+  @include clearfix;
 
-  h1 {
-    @include adjust-font-size-to(48px, 2);
-    font-family: 'Bangers', 'cursive';
+  .logo {
+    float: left;
+
+    a {
+      @include unstyled-link;
+    }
+
+    h1 {
+      @include adjust-font-size-to(48px, 2);
+      font-family: 'Bangers', 'cursive';
+    }
+
+    span {
+      color: $dark-gray;
+    }
   }
 
-  span {
-    color: $dark-gray;
+  nav {
+    @include adjust-font-size-to($base-font-size, 2);
   }
 }
 
@@ -67,7 +84,8 @@ header {
       width: 100px;
       height: 100%;
       border: 0 none;
-      background: $green;
+      @include background(linear-gradient(to bottom right, $green, $dark-green));
+      background-color: $green;
     }
   }
 
