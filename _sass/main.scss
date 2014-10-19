@@ -14,7 +14,7 @@
 
 body {
   font-family: sans-serif;
-  background: $dark-gray;
+  background: $gray;
   margin-bottom: rhythm(1);
 }
 
@@ -62,7 +62,7 @@ header {
     }
 
     span {
-      color: $dark-gray;
+      color: $gray;
     }
   }
 
@@ -83,13 +83,13 @@ header {
       padding: 0;
       border: 0 none;
       outline: none;
-      background: $light-gray;
+      background: $tan;
       text-indent: 0.5em;
       width: 100%;
       font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
 
       @include input-placeholder {
-        color: $dark-gray;
+        color: $gray;
       }
     }
 
