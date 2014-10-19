@@ -13,3 +13,6 @@
 #   config.prevent_phantom_js_auto_install = true
 #end
 #
+Jasmine.configure do |config|
+  config.server_port = 4001
+end
