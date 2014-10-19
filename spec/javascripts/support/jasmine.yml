@@ -11,6 +11,8 @@
 #   - dist/**/*.js
 #
 src_files:
+  - js/underscore.js
+  - js/re.js
   - js/**/*.js
 
 # stylesheets
