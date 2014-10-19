@@ -4,10 +4,13 @@ layout: default
 
 <div class="container">
   <form id="regexp_form">
-    <span>
-      <input id="regexp-input" type="text" autofocus="autofocus" placeholder="Enter JavaScript-style regular expression to display" />
-    </span>
+    <textarea id="regexp-input" autofocus="autofocus" placeholder="Enter JavaScript-style regular expression to display"></textarea>
     <button type="submit">Display</button>
+
+    <ul class="inline-list">
+      <li><a href="#" class="oi with-text" data-glyph="data-transfer-download">Download</a></li>
+      <li><a href="#" class="oi with-text" data-glyph="link-intact">Permalink</a></li>
+    </ul>
   </form>
 </div>
 
@@ -21,12 +24,5 @@ layout: default
 
   <div id="error"></div>
 
-  <div id="regexp-render">
-    <ul class="inline-list">
-      <li><a href="#" class="oi with-text" data-glyph="data-transfer-download">Download</a></li>
-      <li><a href="#" class="oi with-text" data-glyph="link-intact">Permalink</a></li>
-    </ul>
-
-    <div class="image"></div>
-  </div>
+  <div id="regexp-render"></div>
 </div>
