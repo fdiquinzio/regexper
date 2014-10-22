@@ -11,9 +11,8 @@
 #   - dist/**/*.js
 #
 src_files:
-  - js/underscore.js
-  - js/re.js
-  - js/**/*.js
+  - js/require.js
+  - js/setup.js
 
 # stylesheets
 #
@@ -98,7 +97,7 @@ spec_helper: spec/javascripts/support/jasmine_helper.rb
 #
 # boot_dir: spec/javascripts/support/boot
 #
-boot_dir:
+boot_dir: spec/javascripts/support/boot
 
 # boot_files
 #
@@ -111,6 +110,8 @@ boot_dir:
 #   - '**/*.js'
 #
 boot_files:
+  - 'boot.js'
+  - 'requirejs_boot.js'
 
 # rack_options
 #
